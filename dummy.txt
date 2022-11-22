@@ -1,0 +1,2 @@
+hello - say hello to bot
+date - get date of today
