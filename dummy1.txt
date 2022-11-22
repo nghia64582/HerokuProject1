@@ -1,1 +1,3 @@
 https://api.telegram.org/bot5259465400:AAH-10RgdWJTF1FKxzdUpm-ZD6yQUWCYeYg/setWebhook?url=https://nghia64582.herokuapp.com
+
+{'entities': [{'length': 7, 'offset': 0, 'type': 'bot_command'}], 'new_chat_members': [], 'delete_chat_photo': False, 'text': '/repeat w', 'group_chat_created': False, 'new_chat_photo': [], 'channel_chat_created': False, 'chat': {'last_name': 'Trung Nghĩa', 'type': 'private', 'first_name': 'Vũ', 'id': 1415800793, 'username': 'nghiavt3_zps'}, 'date': 1669104083, 'supergroup_chat_created': False, 'photo': [], 'message_id': 119, 'caption_entities': [], 'from': {'last_name': 'Trung Nghĩa', 'language_code': 'en', 'first_name': 'Vũ', 'id': 1415800793, 'username': 'nghiavt3_zps', 'is_bot': False}}
