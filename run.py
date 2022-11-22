@@ -1,4 +1,5 @@
 from main import app
- 
-if __name__ == "__main__":
-  app.run()
+import test1
+
+# if __name__ == "__main__":
+#   app.run()
