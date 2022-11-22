@@ -8,7 +8,6 @@ token = '5259465400:AAH-10RgdWJTF1FKxzdUpm-ZD6yQUWCYeYg'
 
 def welcome_msg(item):
     global token
-    print(item)
     if item["text"].lower() == "hi":
         msg = 'hello'
         chat_id = item["chat"]["id"]
