@@ -1,17 +1,30 @@
-from telegram import Update
-from telegram.ext import Updater, CommandHandler, CallbackContext
-from datetime import date
+from flask import Flask, jsonify, request
+import datetime
+import requests
+
+app = Flask(__name__)
+
+token = '5259465400:AAH-10RgdWJTF1FKxzdUpm-ZD6yQUWCYeYg'
+
+def welcome_msg(item):
+    global token
+    print(item)
+    if item["text"].lower() == "hi":
+        msg = 'hello'
+        chat_id = item["chat"]["id"]
+        user_id = item["from"]["id"]
+        user_name = item["from"].get("username",user_id)
+        welcome_msg = '''{}'''.format(msg)
+        to_url = 'https://api.telegram.org/bot{}/sendMessage?chat_id={}&text={}&parse_mode=HTML'.format(token, chat_id, welcome_msg)
+        resp = requests.get(to_url)
 
 
-def hello(update: Update, context: CallbackContext) -> None:
-	update.message.reply_text("Hello " + update.effective_user.first_name)
-
-def getDate(update: Update, context: CallbackContext) -> None:
-	today = date.today()
-	update.message.reply_text("Today is " + today.strftime("%m-%d-%Y"))
-
-updater = Updater("5259465400:AAH-10RgdWJTF1FKxzdUpm-ZD6yQUWCYeYg")
-updater.dispatcher.add_handler(CommandHandler("hello", hello))
-updater.dispatcher.add_handler(CommandHandler("date", getDate))
-updater.start_polling()
-updater.idle()
+@app.route("/", methods = ['GET', 'POST'])
+def home():
+    if request.method == 'POST':
+        data = request.get_json()
+        data = data["message"]
+        welcome_msg(data)
+        return { 'statusCode' : 200, 'body' : 'Success' , 'data' : data }
+    else:
+        return { 'statusCode' : 200, 'body' : 'Success'}
