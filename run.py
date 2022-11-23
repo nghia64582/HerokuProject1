@@ -39,6 +39,12 @@ def saveText(update: Update, context: CallbackContext):
     file.write(str(update.message.text).split()[1])
     file.close()
 
+def loadText(update: Update, context: CallbackContext):
+    file = open("data.txt", "r")
+    data = file.read()
+    file.close()
+    context.bot.send_message(chat_id = '1415800793', text = data)
+
 def notify(context: CallbackContext):
     context.bot.send_message(chat_id = '1415800793', text = 'Daily notification!')
 
@@ -61,10 +67,10 @@ updater.dispatcher.add_handler(CommandHandler("hello", hello))
 updater.dispatcher.add_handler(CommandHandler("date", getDate))
 updater.dispatcher.add_handler(CommandHandler("repeat", repeat))
 updater.dispatcher.add_handler(CommandHandler("save", saveText))
+updater.dispatcher.add_handler(CommandHandler("load", loadText))
 updater.dispatcher.add_handler(CommandHandler("turnOn", turnOn, pass_job_queue = True))
 updater.job_queue.run_daily(notify,
     datetime.time(hour = 13, minute = 11, second = 40, tzinfo = pytz.timezone('Asia/Ho_Chi_Minh')), 
-
 )
 updater.start_polling()
 updater.idle()
