@@ -1,0 +1,3 @@
+hello - hello bot
+date - get the date of today
+repeat - repeat the text 
