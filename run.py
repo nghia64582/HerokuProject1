@@ -9,7 +9,7 @@ import time
 
 
 def hello(update: Update, context: CallbackContext) -> None:
-    update.message.reply_text("Hello " + update.effective_user.first_name)
+    update.message.reply_text("Helloooo " + update.effective_user.first_name)
 
 def getDate(update: Update, context: CallbackContext) -> None:
     today = date.today()
