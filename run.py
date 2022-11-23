@@ -32,7 +32,7 @@ def stop_notify(update: Update, context: CallbackContext):
     chat_id = update.message.chat_id
     context.bot.send_message(chat_id = chat_id, text='Stopping automatic messages!')
     job = context.job_queue.get_jobs_by_name(str(chat_id))
-    job[0].schedule_removal()
+    job[0].schedule_removal() 
 
 def saveText(update: Update, context: CallbackContext):
     file = open("data.txt", "w")
