@@ -4,7 +4,7 @@ import requests
 
 app = Flask(__name__)
 
-token = '5259465400:AAH-10RgdWJTF1FKxzdUpm-ZD6yQUWCYeYg'
+token = '5259465400:AAFeZBGcBXfnxmXbnoqbc5c6NseDXRFqf3w'
 
 def welcome_msg(item):
     global token

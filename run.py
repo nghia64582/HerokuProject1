@@ -57,7 +57,7 @@ def stop(update: Update, context: CallbackContext):
     global updater
     updater.stop()
 
-LiHeng_TOKEN = "5259465400:AAH-10RgdWJTF1FKxzdUpm-ZD6yQUWCYeYg"
+LiHeng_TOKEN = "5259465400:AAFeZBGcBXfnxmXbnoqbc5c6NseDXRFqf3w"
 DevBot_TOKEN = "5782089032:AAFreSMLXRSlIFJLOa6WQB9jss7xAw0vng4"
 
 updater = Updater(LiHeng_TOKEN)
