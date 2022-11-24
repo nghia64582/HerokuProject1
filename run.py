@@ -60,6 +60,7 @@ def stop(update: Update, context: CallbackContext):
 LiHeng_TOKEN = "5259465400:AAFeZBGcBXfnxmXbnoqbc5c6NseDXRFqf3w"
 DevBot_TOKEN = "5782089032:AAFreSMLXRSlIFJLOa6WQB9jss7xAw0vng4"
 
+print("Bot start!")
 updater = Updater(LiHeng_TOKEN)
 updater.dispatcher.add_handler(CommandHandler("auto", start_auto_messaging))
 updater.dispatcher.add_handler(CommandHandler("stop", stop_notify))
